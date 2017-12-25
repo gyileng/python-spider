@@ -1,3 +1,1 @@
-Here will record my daily learning process and results，
-Every night I will be here to update the code I wrote this day，
-In order to improve themselves if there are friends from afar can help me please feel free to email me 17626961372@163.com
+这里面都是我平时写的一些代码，可能比较乱，但是应该都可以看懂，有什么不明白的地方随时联系我，后续有时间我会整理一下的，有几个爬虫使用了同一个config.py文件，所以使用的时候要注意，当然也可以自己写一个config.py导入一下，很简单其中淘宝美食，和淘宝女孩使用了chromedriver,自行百度下载一下就可以了．我的个人ＷＸ:gao879663394
