@@ -1,0 +1,91 @@
+# 1.	编写一个程序，实现创建一个子进程，子进程每一秒打印一次：这是子进程，循环的第n次，打印 的次数是由主进程传递给子进程。
+import multiprocessing, time, os
+# def work(i):
+#     while True:
+#         print('这是子进程，循环的第%d次' % i)
+#         time.sleep(1)
+#
+#
+# if __name__ == '__main__':
+#     for i in range(5):
+#         mlt = multiprocessing.Process(target=work, args=(i,))
+#         mlt.start()
+#         time.sleep(1)
+
+# 2. 编写一个程序，使用队列实现进程间通信。
+# def work1(queue):
+#     while True:
+#         if queue.empty():
+#             print('1kong l ')
+#             time.sleep(1)
+#         else:
+#             data = queue.get()
+#             print('1取出了%s' % data)
+#             time.sleep(2)
+#
+# def work2(queue):
+#     while True:
+#         if queue.empty():
+#             print(' 2kong l ')
+#             time.sleep(1)
+#         else:
+#             data = queue.get()
+#             print('2取出了%s' % data)
+#             time.sleep(2)
+
+
+# if __name__ == '__main__':
+#     q = multiprocessing.Queue(3)
+#     mlt1 = multiprocessing.Process(target=work1, args=(q,))
+#     mlt2 = multiprocessing.Process(target=work2, args=(q,))
+#     mlt1.start()
+#     mlt2.start()
+#     while True:
+#         data = input(':')
+#         q.put(data)
+
+# 文件备份系统
+
+# def work1(name):
+#     file_name = name
+#     new_file_name = file_name + '备份'
+#     os.mkdir(new_file_name)
+#     file_list = os.listdir(file_name)
+#     # print(file_list)
+#     queue = multiprocessing.Queue()
+#     byte1 = b''
+#     for file in file_list:
+#         sum = open(file_name + '/' + file, 'rb')
+#         sum1 = sum.read()
+#         byte1 += sum1
+#         mlt = multiprocessing.Process(target=work2, args=(file_name, new_file_name, file, queue))
+#         mlt.start()
+#     num = 0
+#     byte = b''
+#     while True:
+#         file = queue.get()
+#         sum = open(file_name + '/' + file, 'rb')
+#         sum2 = sum.read()
+#         byte += sum2
+#         num += 1
+#         # print('\r 当前的进度是%.2f%%' % (100 * (num * 1.0 / len(file_list))), end='')
+#         print('\r 当前的进度是%db/%db' % (len(byte), len(byte1)), end='')
+#         time.sleep(0.3)
+#         if num == len(file_list):
+#             print('拷贝完成')
+#             break
+#
+#
+# def work2(file_name, new_file_name, file, queue):
+#     file_name = open(file_name + '/' + file, 'rb')
+#     new_file_name = open(new_file_name + '/' + file, 'wb')
+#     file_data = file_name.read()
+#     new_file_name.write(file_data)
+#     file_name.close()
+#     new_file_name.close()
+#     queue.put(file)
+#
+# if __name__ == '__main__':
+#     name = input('请输入需要备份的文件名：')
+#     mlt1 = multiprocessing.Process(target=work1,args=(name,))
+#     mlt1.start()
