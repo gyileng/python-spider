@@ -3,9 +3,9 @@
 标签： python 爬虫
 
 ---
-&emsp;&emsp;时隔多日再次拾起爬虫，以后尽量隔段时间都可以更新一个爬虫，我的打算是先爬取国内大部分的旅游网站(携程；去哪儿；58同城...)，后续在考虑其他的，或者也可以提一些需求，有时间我会去写。<br>
-&emsp;&emsp;系统使用Linux,Python版本使用的是3.6，虚拟环境使用virtualenv，IDE使用Pycharm，数据库使用MongoDB。<br>
-&emsp;&emsp;开发环境:Ubuntu+Python3.6+virtualenv+Pycharm+MongoDB
+&emsp;&emsp;1、时隔多日再次拾起爬虫，以后尽量隔段时间都可以更新一个爬虫，我的打算是先爬取国内大部分的旅游网站(携程；去哪儿；58同城...)，后续在考虑其他的，或者也可以提一些需求，有时间我会去写。<br><br>
+&emsp;&emsp;2、系统使用Linux,Python版本使用的是3.6，虚拟环境使用virtualenv，IDE使用Pycharm，数据库使用MongoDB。<br><br>
+&emsp;&emsp;3、开发环境:Ubuntu+Python3.6+virtualenv+Pycharm+MongoDB
 
 ---
 
