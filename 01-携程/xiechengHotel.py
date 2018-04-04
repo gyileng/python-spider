@@ -9,6 +9,7 @@ import requests
 
 from config import MONGO_URL, MONGO_DB, MONGO_TABLE, city_dict, url_dict, base_city
 
+# 链接mongo
 client = pymongo.MongoClient(MONGO_URL, connect=False)
 db = client[MONGO_DB]
 
@@ -35,7 +36,6 @@ class XieCheng(object):
         self.data['checkIn'] = start_time
         self.data['checkOut'] = end_time
 
-
     def get_data(self):
         """主页数据"""
         response = requests.get(self.url, headers=self.headers)
@@ -57,6 +57,10 @@ class XieCheng(object):
                 hotel['url'] = 'http://hotels.ctrip.com' + hotel['url']
                 hotel['img'] = 'http:' + hotel['img']
                 hotel['amount'] = amount_dict[hotel['id']]
+		# 获取主页的酒店详情的图片
+                hotel_id = hotel['id']
+                results = self.get_img_data('http://hotels.ctrip.com/pic/{0}.html'.format(hotel_id))
+                hotel['detail_imgs'] = results
                 yield hotel
         except Exception:
             print('第{0}页获取失败'.format(self.data['page']))
@@ -73,7 +77,30 @@ class XieCheng(object):
             hotel['img'] = 'http:' + hotel['img']
             hotel['amount'] = htllist[i]['amount']
             i += 1
+	    # 获取其它页的酒店详情的图片
+            hotel_id = hotel['id']
+            results = self.get_img_data('http://hotels.ctrip.com/pic/{0}.html'.format(hotel_id))
+            hotel['detail_imgs'] = results
             yield hotel
+
+    def get_img_data(self, url):
+        response = requests.get(url=url, headers=self.headers)
+        results = self.parse_img_data(response.content.decode())
+        print(url, '图片获取成功')
+        return results
+
+    def parse_img_data(self, data):
+        results = re.findall(r'album:.*?(.*?)}],', data, re.S)[0]
+        results = (results + '}]').replace('"', '\\"').replace('\'', '\"').replace('max', '"max"').replace('min',
+                                                                                                           '"min"') \
+            .replace('title', '"title"').replace('info', '"info"').replace('source', '"source"').replace('index',
+                                                                                                         '"index"') \
+            .replace('pid:', '"pid":')
+        results = json.loads(results)
+        hotel_img = []
+        for result in results:
+            hotel_img.append('http:' + result['max'])
+        return hotel_img
 
     def save_mongodb(self, result):
         """保存到mongodb"""
@@ -98,7 +125,9 @@ if __name__ == '__main__':
     city = input('请输入目的地：')
     start_time = input('请输入住店时间(格式：xxxx-xx-xx, 当日请回车):')
     end_time = input('请输入离店时间(格式：xxxx-xx-xx, 当日请回车)：')
+    # 创建实例
     xiecheng = XieCheng(start_time, end_time, city)
+    # 创建进程池
     pool = Pool()
-    pages = [x for x in range(2, 20)]
+    pages = [x for x in range(2, 10)]
     pool.map(xiecheng.run, pages)
