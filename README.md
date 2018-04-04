@@ -3,9 +3,14 @@
 标签： python 爬虫
 
 ---
-&emsp;&emsp;时隔多日再次拾起爬虫，以后尽量隔段时间都可以更新一个爬虫，我的打算是先爬取国内大部分的旅游网站(携程；去哪儿；58同城...)，后续在考虑其他的，或者也可以提一些需求，有时间我回去写。
+&emsp;&emsp;时隔多日再次拾起爬虫，以后尽量隔段时间都可以更新一个爬虫，我的打算是先爬取国内大部分的旅游网站(携程；去哪儿；58同城...)，后续在考虑其他的，或者也可以提一些需求，有时间我会去写。
+&emsp;&emsp;系统使用Linux,Python版本使用的是3.6，虚拟环境使用virtualenv，IDE使用Pycharm，数据库使用MongoDB。
+&emsp;&emsp;开发环境:Ubuntu+Python3.6+virtualenv+Pycharm+MongoDB
+
+---
 
  - [01-以前的杂项][1]
+目前只支持北京，上海，天津，连云港城市的酒店信息查询，需要其他的城市需要配置config.py
  - [02-携程各大城市酒店实时信息][2]
  - 03-携程旅游攻略
  - 待定
@@ -15,4 +20,4 @@
 
 
   [1]: https://github.com/gyileng/python-spider/tree/master/00-%E6%9D%82%E9%A1%B9
-  [2]: https://github.com/gyileng/python-spider/tree/master/01-%E6%90%BA%E7%A8%8
+  [2]: https://github.com/gyileng/python-spider/tree/master/01-%E6%90%BA%E7%A8%8B
