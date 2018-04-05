@@ -10,9 +10,10 @@
 ---
 
  - [01-以前的杂项][1]<br>
-目前只支持北京，上海，天津，连云港城市的酒店信息查询，需要其他的城市需要配置config.py
  - [02-携程各大城市酒店实时信息][2]
- - 03-携程旅游攻略
+ 目前只支持北京，上海，天津，连云港城市的酒店信息查询，需要其他的城市需要配置config.py
+ - [03-飞猪各大城市酒店实时信息][3]
+ 由于阿里的反爬策略高明，各种请求参数都是JS加密的本人能力有限。所以只能使用seleinum + Chrome来获取数据，这个版本的程序是在Win10下写的，所以需要早Linux下运行的需要自行调试修改，后续有精力在想解密的事情吧。
  - 待定
 
 **联系方式：gaoyang950616@gmail.com**
@@ -21,3 +22,4 @@
 
   [1]: https://github.com/gyileng/python-spider/tree/master/00-%E6%9D%82%E9%A1%B9
   [2]: https://github.com/gyileng/python-spider/tree/master/01-%E6%90%BA%E7%A8%8B
+  [3]: https://github.com/gyileng/python-spider/tree/master/02-%E9%A3%9E%E7%8C%AA
