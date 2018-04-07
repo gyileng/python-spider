@@ -2,7 +2,7 @@
 
 #### 需要用到的工具包
 - 代理池参考https://github.com/jhao104/proxy_pool
-- python扩展包requests，execjs，lxml，见<a href="https://github.com/gyileng/python-spider/03-58同城/requirements.txt"target="_blank">requirements.txt</a>
+- python扩展包requests，execjs，lxml，见requirements.txt
 
 #### 程序说明
 - 目标：爬取58同城所有城市房屋出租信息
