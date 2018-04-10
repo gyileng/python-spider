@@ -25,4 +25,4 @@
   [3]: https://github.com/gyileng/python-spider/tree/master/02-%E9%A3%9E%E7%8C%AA
   [4]: https://github.com/gyileng/python-spider/tree/master/03-58%E5%90%8C%E5%9F%8E
   [5]: https://github.com/BlasTJSN
-  [6]: https://github.com/BlasTJSN
+  [6]: https://github.com/gyileng/python-spider/tree/master/04-XiaoRui%E5%8D%9A%E5%AE%A2
