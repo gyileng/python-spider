@@ -14,6 +14,7 @@
  - [02-飞猪各大城市酒店实时信息][3]<br>
  - [03-58同城][4](该代码由[BlasTJSN][5]提供)<br>
  - [04-XiaoRui博客][6]<br>
+ - [04-johui职友网][6]<br>
  - 待定
 
 **联系方式：gaoyang950616@gmail.com**
@@ -25,4 +26,4 @@
   [3]: https://github.com/gyileng/python-spider/tree/master/02-%E9%A3%9E%E7%8C%AA
   [4]: https://github.com/gyileng/python-spider/tree/master/03-58%E5%90%8C%E5%9F%8E
   [5]: https://github.com/BlasTJSN
-  [6]: https://github.com/gyileng/python-spider/tree/master/04-XiaoRui%E5%8D%9A%E5%AE%A2
+  [6]: https://github.com/BlasTJSN
