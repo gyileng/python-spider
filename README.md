@@ -15,6 +15,7 @@
  - [03-58同城][4](该代码由[BlasTJSN][5]提供)<br>
  - [04-XiaoRui博客][6]<br>
  - [04-johui职友网][6]<br>
+ - [05-johui职友网][7]<br>
  - 待定
 
 **联系方式：gaoyang950616@gmail.com**
@@ -27,3 +28,4 @@
   [4]: https://github.com/gyileng/python-spider/tree/master/03-58%E5%90%8C%E5%9F%8E
   [5]: https://github.com/BlasTJSN
   [6]: https://github.com/BlasTJSN
+  [7]: https://github.com/gyileng/python-spider/tree/master/05-johui
